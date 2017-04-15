@@ -1,0 +1,171 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="Content-Security-Policy" content="default-src * data:; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+  <script src="components/loader.js"></script>
+  <script src="lib/onsenui/js/onsenui.min.js"></script>
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="components/loader.css">
+  <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script>
+    ons.ready(function() {
+      console.log("Onsen UI is ready!");
+    });
+
+    window.fn = {};
+    window.fn.open = function() {
+      var menu = document.getElementById('menu');
+      menu.open();
+    };
+    window.fn.load = function(page) {
+      var content = document.getElementById('content');
+      var menu = document.getElementById('menu');
+      content
+        .load(page)
+        .then(menu.close.bind(menu));
+    };
+
+  </script>
+</head>
+<body>
+  <ons-splitter>
+    <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
+      <ons-page>
+        <ons-list>
+          <ons-list-item onclick="fn.load('home')" tappable>
+            Home
+          </ons-list-item>
+          <ons-list-item onclick="fn.load('find')" tappable>
+            Find
+          </ons-list-item>
+          <ons-list-item onclick="fn.load('deals')" tappable>
+            Deals
+          </ons-list-item>
+          <ons-list-item onclick="fn.load('settings')" tappable>
+            Settings
+          </ons-list-item>
+        </ons-list>
+      </ons-page>
+    </ons-splitter-side>
+    <ons-splitter-content id="content" page="home"></ons-splitter-content>
+  </ons-splitter>
+
+<!--Home page-->
+  <ons-template id="home">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button onclick="fn.open()">
+            <ons-icon icon="ion-navicon, material:md-menu"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          Main
+        </div>
+
+    <div class="button-bar right" style="margin:0 auto; padding-right: 5px;">
+      <div class="button-bar__item">
+        <input type="radio" class="button-bar__input" name="segment-a" checked>
+        <button class="button-bar__button">Map View</button>
+      </div>
+      <div class="button-bar__item">
+        <input type="radio" class="button-bar__input" name="segment-a">
+        <button class="button-bar__button">List View</button>
+      </div>
+    </div>
+      </ons-toolbar>
+     <p style="text-align: center; opacity: 0.6; padding-top: 20px;"> 
+
+<!--Main Container-->
+
+      <div class="container">
+
+        <div class="card container">
+          <img class="card-img-top" src="" alt="Card image cap">
+          <div class="card-block">
+            <h3>Bryan's Mom's Taco Truck <span class="label label-success pull-right">Open</span></h3>
+            <p class="card-text">Type: Italian</p>
+            <button type="button" class="btn btn-default" aria-label="Left Align">
+              <span class="glyphicon glyphicon-heart" aria-hidden="true"> 7</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="card container">
+          <img class="card-img-top" src="img/tacotruck.jpg" alt="Card image cap">
+          <div class="card-block">
+            <h3>Chinese Truck <span class="label label-success pull-right">Open</span></h3>
+            <p class="card-text">Type: Mexican</p>
+            <button type="button" class="btn btn-default" aria-label="Left Align">
+              <span class="glyphicon glyphicon-heart" aria-hidden="true"> 7</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+     </p> 
+
+    </ons-page>
+  </ons-template>
+
+
+<!--Settings page-->
+  <ons-template id="settings">
+  <ons-page>
+    <ons-toolbar>
+      <div class="left">
+        <ons-toolbar-button onclick="fn.open()">
+          <ons-icon icon="ion-navicon, material:md-menu"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+      <div class="center">
+        Settings
+      </div>
+    </ons-toolbar>
+  </ons-page>
+  </ons-template>
+
+<!--Deals page-->
+  <ons-template id="deals">
+  <ons-page>
+    <ons-toolbar>
+      <div class="left">
+        <ons-toolbar-button onclick="fn.open()">
+          <ons-icon icon="ion-navicon, material:md-menu"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+      <div class="center">
+        Deals
+      </div>
+    </ons-toolbar>
+  </ons-page>
+  </ons-template>
+
+<!--Find page-->
+  <ons-template id="find">
+  <ons-page>
+    <ons-toolbar>
+      <div class="left">
+        <ons-toolbar-button onclick="fn.open()">
+          <ons-icon icon="ion-navicon, material:md-menu"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+      <div class="center">
+        Find
+      </div>
+    </ons-toolbar>
+<iframe src="indexMap.html" style="position:fixed; top:0px; left:0px; bottom:0px; right:0px; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;">
+</iframe>
+  </ons-page>
+  </ons-template>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

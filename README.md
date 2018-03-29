@@ -7,4 +7,12 @@ We believe that food brings people together and that supporting local businesses
 ## What it does
 This app shows the user food trucks near by.  These trucks can be viewed in a list of "cards" with images and relevant information such as the type of cuisine, sorted by closest distance.  Nearby trucks can also be viewed in a map with truck icons corresponding to their locations.
 
--- The OmmNomNow HackFresno Team
+## What it looks like
+![](screenshots/list_view.png) 
+<br><br>
+![](screenshots/map_view.png)
+<br><br>
+![](screenshots/map_view_detail.png)
+<br><br><br>
+
+-- The OmmNomNow HackFresno Team: Bryan Alvarado, Jonathan Castro, Victoria Fall, Daniel Nguyen
